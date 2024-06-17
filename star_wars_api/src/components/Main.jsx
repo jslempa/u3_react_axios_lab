@@ -14,6 +14,11 @@ const Main = (props) => {
     return (
         <div className='routes-container'>
           <Routes>
+              <Route path='/people' element={<PeopleList people={props.people}/>}/>
+              <Route path='/planets' element={<PlanetsList planets={props.planets}/>}/>
+              <Route path='/films' element={<FilmsList films={props.films}/>}/>
+              <Route path='/species' element={<SpeciesList species={props.species}/>}/>
+              <Route path='/vehicles' element={<VehiclesList vehicles={props.vehicles}/>}/>
               <Route path='/starships' element={<StarshipList starships={props.starships}/>}/>
               <Route path='/' element={<Home/>}/>
           </Routes>            
