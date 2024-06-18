@@ -21,9 +21,7 @@ const StarshipList = (props) => {
               props.starships.map((starship) => (
                 <div key={starship.id} className="card"
                      onClick={() => showStarship(starship)}>
-                    <h3>{starship.name}</h3>
-                  
-                 
+                    <h3>{starship.name}</h3>     
                 </div>
               ))
             }

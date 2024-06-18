@@ -16,31 +16,51 @@ function App() {
   useEffect(() => {
     const getPeople = async () => {
       const res = await axios.get(`${BASE_URL}/people`)
-      setPeople(res.data.results)
+      let listOfPeople = res.data.results
+      listOfPeople.map((person, index) => {
+        person.id = index
+      })
+      setPeople(listOfPeople)
     }
     getPeople()
 
     const getPlanets = async () => {
       const res = await axios.get(`${BASE_URL}/planets`)
-      setPlanets(res.data.results)
+      let listOfPlanets = res.data.results
+      listOfPlanets.map((planet, index) => {
+        planet.id = index
+      })
+      setPlanets(listOfPlanets)
     }
     getPlanets()
 
     const getFilms = async () => {
       const res = await axios.get(`${BASE_URL}/films`)
-      setFilms(res.data.results)
+      let listOfFilms = res.data.results
+      listOfFilms.map((film, index) => {
+        film.id = index
+      })
+      setFilms(listOfFilms)
     }
     getFilms()
 
     const getSpecies = async () => {
       const res = await axios.get(`${BASE_URL}/species`)
-      setSpecies(res.data.results)
+      let listOfSpecies = res.data.results
+      listOfSpecies.map((specie, index) => {
+        specie.id = index
+      })
+      setSpecies(listOfSpecies)
     }
     getSpecies()
 
     const getVehicles = async () => {
       const res = await axios.get(`${BASE_URL}/vehicles`)
-      setVehicles(res.data.results)
+      let listOfVehicles = res.data.results
+      listOfVehicles.map((vehicle, index) => {
+        vehicle.id = index
+      })
+      setVehicles(listOfVehicles)
     }
     getVehicles()
 

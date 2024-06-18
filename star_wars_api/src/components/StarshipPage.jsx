@@ -18,31 +18,25 @@ const StarshipPage = (props) => {
         setStarship(selectedStarship)
     }, [props.starships, id])
 
-    console.log(starship)
-  
-  
+    console.log(starship)  
     
     return starship ? (
           <div className="grid">
-            <h1>{starship.name}</h1>  
-
+            <h2>{starship.name}</h2>  
             <h5>MGLT: {starship.MGLT}</h5>
-                    <h5>Cargo capacity: {starship.cargo_capacity}</h5>
-                    <h5>Consumables: {starship.consumables}</h5>
-                    <h5>Cost in credits: {starship.cost_in_credits}</h5>
-                    <h5>Crew: {starship.crew}</h5>
-                    {/* <h5>Films: {starship.films}</h5> */}
-                    <h5>Hyperdrive rating: {starship.hyperdrive_rating}</h5>
-                    <h5>Length: {starship.length}</h5>
-                    <h5>Manufacturer: {starship.manufacturer}</h5>
-                    <h5>Max atmosphering speed: {starship.max_atmosphering_speed}</h5>
-                    <h5>Model: {starship.model}</h5>
-                    <h5>Passengers: {starship.passengers}</h5>
-                    {/* <h5>Pilots: {starship.pilots}</h5> */}
-                    <h5>Starship class: {starship.starship_class}</h5>
-
-
-
+            <h5>Cargo capacity: {starship.cargo_capacity}</h5>
+            <h5>Consumables: {starship.consumables}</h5>
+            <h5>Cost in credits: {starship.cost_in_credits}</h5>
+            <h5>Crew: {starship.crew}</h5>
+            {/* <h5>Films: {starship.films}</h5> */}
+            <h5>Hyperdrive rating: {starship.hyperdrive_rating}</h5>
+            <h5>Length: {starship.length}</h5>
+            <h5>Manufacturer: {starship.manufacturer}</h5>
+            <h5>Max atmosphering speed: {starship.max_atmosphering_speed}</h5>
+            <h5>Model: {starship.model}</h5>
+            <h5>Passengers: {starship.passengers}</h5>
+            {/* <h5>Pilots: {starship.pilots}</h5> */}
+            <h5>Starship class: {starship.starship_class}</h5>
           </div>
       ) : null
     }
