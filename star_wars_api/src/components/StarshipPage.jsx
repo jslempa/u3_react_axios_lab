@@ -7,20 +7,22 @@ const StarshipPage = (props) => {
 
     const [starship, setStarship] = useState('')
 
-    let { id } = useParams
+    let { id } = useParams()
 
     console.log(useParams())
 
     useEffect(() => {
         let selectedStarship = props.starships.find((starship) => starship.id === parseInt(id))
+        console.log(id)
+        console.log(selectedStarship)
         setStarship(selectedStarship)
     }, [props.starships, id])
+
+    console.log(starship)
   
-    if(!props.starships) {
-      return <h1>Loading... please wait</h1>
-    } else { 
+  
     
-    return (
+    return starship ? (
           <div className="grid">
             <h1>{starship.name}</h1>  
 
@@ -42,7 +44,7 @@ const StarshipPage = (props) => {
 
 
           </div>
-      )}
+      ) : null
     }
     
   export default StarshipPage
