@@ -21,7 +21,7 @@ const Main = (props) => {
               <Route path='/species' element={<SpeciesList species={props.species}/>}/>
               <Route path='/vehicles' element={<VehiclesList vehicles={props.vehicles}/>}/>
               <Route path='/starships' element={<StarshipList starships={props.starships}/>}/>
-              <Route pathe='/starships/:id' element={<StarshipPage starships={props.starships}/>}/>
+              <Route path='/starships/:id' element={<StarshipPage starships={props.starships}/>}/>
               <Route path='/' element={<Home/>}/>
           </Routes>            
         </div>

@@ -46,7 +46,12 @@ function App() {
 
     const getStarships = async () => {
       const res = await axios.get(`${BASE_URL}/starships`)
-      setStarships(res.data.results)
+      let listOfStarships = res.data.results
+      listOfStarships.map((starship, index) => {
+        starship.id = index
+      })
+      console.log(listOfStarships)
+      setStarships(listOfStarships)
     }
     getStarships()
   }, [])
