@@ -51,8 +51,6 @@ function App() {
     getStarships()
   }, [])
 
-  //console.log(starships)
-
   return (
     <div>
       <Header/>
