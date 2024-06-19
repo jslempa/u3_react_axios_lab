@@ -5,30 +5,32 @@ const VehiclePage = (props) => {
 
     console.log(props)
 
-    const [film, setFilm] = useState('')
+    const [vehicle, setVehicle] = useState('')
 
     let { id } = useParams()
 
     console.log(useParams())
 
     useEffect(() => {
-        let selectedFilm = props.films.find((film) => film.id === parseInt(id))
-        setFilm(selectedFilm)
-    }, [props.films, id])  
+        let selectedVehicle = props.vehicles.find((vehicle) => vehicle.id === parseInt(id))
+        setVehicle(selectedVehicle)
+    }, [props.vehicles, id])  
     
-    return film ? (
+    return vehicle ? (
           <div className="grid">
-            <h1>{film.name}</h1>  
-            <h5>Episode: {film.episode_id}</h5>
-            <h5>Opening crawl: {film.opening_crawl}</h5>
-            <h5>Director: {film.director}</h5>
-            <h5>Producers: {film.producer}</h5>
-            <h5>Release date: {film.release_date}</h5>
-            {/* <h5>Characters: {film.characters}</h5>
-            <h5>Planets: {film.planets}</h5>
-            <h5>Starships{film.starships}</h5>
-            <h5>Vehicles: {film.vehicles}</h5>
-            <h5>Species: {film.species}</h5> */}
+            <h2>{vehicle.name}</h2>  
+            <h5>Model: {vehicle.model}</h5>
+            <h5>Manufacturer: {vehicle.manufacturer}</h5>
+            <h5>Cost in credits: {vehicle.cost_in_credits}</h5>
+            <h5>Length: {vehicle.length}</h5>
+            <h5>Max atmosphering speed: {vehicle.max_atmosphering_speed}</h5>
+            <h5>Crew: {vehicle.crew}</h5>
+            <h5>Passengers: {vehicle.passengers}</h5>
+            <h5>Cargo capacity: {vehicle.cargo_capacity}</h5>
+            <h5>Consumables: {vehicle.consumables}</h5>
+            <h5>Vehicle class: {vehicle.vehicle_class}</h5>
+            <h5>Pilots: {vehicle.pilots}</h5>
+            {/* <h5>Films: {vehicle.films}</h5> */}
           </div>
       ) : null
     }

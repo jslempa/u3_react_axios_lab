@@ -1,16 +1,24 @@
+import { useNavigate } from 'react-router-dom'
+
 const PlanetsList = (props) => {
 
   console.log(props)
+
+  let navigate = useNavigate()
+
+  const showPlanet = (planet) => {
+    navigate(`${planet.id}`)
+  }
   
-    if(!props.planets) {
+  if(!props.planets) {
       return <h1>Loading... please wait</h1>
-    } else { 
+  } else { 
     
     return (
           <div className="grid">
               {
                 props.planets.map((planet) => (
-                  <div key={planet.name} className="card">
+                  <div key={planet.id} className="card">
                       <h3>{planet.name}</h3>
                       <h5>Rotation period: {planet.rotation_period}</h5>
                       <h5>Orbital period: {planet.orbital_period}</h5>

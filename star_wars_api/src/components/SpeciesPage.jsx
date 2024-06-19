@@ -5,30 +5,31 @@ const SpeciesPage = (props) => {
 
     console.log(props)
 
-    const [film, setFilm] = useState('')
+    const [specie, setSpecies] = useState('')
 
     let { id } = useParams()
 
     console.log(useParams())
 
     useEffect(() => {
-        let selectedFilm = props.films.find((film) => film.id === parseInt(id))
-        setFilm(selectedFilm)
-    }, [props.films, id])  
+        let selectedSpecies = props.species.find((specie) => specie.id === parseInt(id))
+        setSpecies(selectedSpecies)
+    }, [props.species, id])  
     
-    return film ? (
+    return specie ? (
           <div className="grid">
-            <h2>{film.name}</h2>  
-            <h5>Episode: {film.episode_id}</h5>
-            <h5>Opening crawl: {film.opening_crawl}</h5>
-            <h5>Director: {film.director}</h5>
-            <h5>Producers: {film.producer}</h5>
-            <h5>Release date: {film.release_date}</h5>
-            {/* <h5>Characters: {film.characters}</h5>
-            <h5>Planets: {film.planets}</h5>
-            <h5>Starships{film.starships}</h5>
-            <h5>Vehicles: {film.vehicles}</h5>
-            <h5>Species: {film.species}</h5> */}
+            <h2>{specie.name}</h2>  
+            <h5>Classification: {specie.classification}</h5>
+            <h5>Designation: {specie.designation}</h5>
+            <h5>Average height: {specie.average_height}</h5>
+            <h5>Skin Colors: {specie.skin_colors}</h5>
+            <h5>Hair Colors: {specie.hair_colors}</h5>
+            <h5>Eye Colors: {specie.eye_colors}</h5>
+            <h5>Average lifespan: {specie.average_lifespan}</h5>
+            {/* <h5>Homeworld: {specie.homeworld}</h5> */}
+            <h5>Language: {specie.language}</h5>
+            {/* <h5>People: {specie.people}</h5>
+            <h5>Films: {specie.films}</h5> */}
           </div>
       ) : null
     }
